@@ -14,9 +14,9 @@ namespace rwresources
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Partials",
-                url: "{controller}/Partials/{name}",
-                defaults: new { controller = "Home", action = "Partials" }
+                name: "Partial",
+                url: "{controller}/Partial/{name}",
+                defaults: new { controller = "Home", action = "Partial" }
             );
 
             routes.MapRoute(

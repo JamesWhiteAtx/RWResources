@@ -115,6 +115,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EbayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -128,6 +129,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\rwresources %282%29.pubxml" />
@@ -139,6 +141,7 @@
     <Content Include="Scripts\reqjsmain.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\routes.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -156,6 +159,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Partials\Body.cshtml" />
+    <Content Include="Views\Home\Partials\Default.cshtml" />
+    <Content Include="Views\Home\Partials\View1.cshtml" />
+    <Content Include="Views\Home\Partials\View2.cshtml" />
+    <Content Include="Views\eBay\Index.cshtml" />
+    <Content Include="Views\eBay\Partials\Body.cshtml" />
+    <Content Include="Views\eBay\Partials\Default.cshtml" />
+    <Content Include="Views\eBay\Partials\View1.cshtml" />
+    <Content Include="Views\eBay\Partials\View2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

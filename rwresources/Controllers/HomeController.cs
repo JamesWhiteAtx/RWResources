@@ -27,8 +27,12 @@ namespace rwresources.Controllers
             return View();
         }
 
-        public ActionResult Partials(string name)
+        public ActionResult Partial(string name)
         {
+            if (name == null)
+            {
+                name = "Default";
+            }
             return PartialView("Partials/" + name);
         }
     }

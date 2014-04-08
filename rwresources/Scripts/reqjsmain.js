@@ -31,8 +31,6 @@ require([
 ], function (bootstrap, angular, app, routes) {
     'use strict';
 
-
-
     //var $html = angular.element(document.getElementsByTagName('body')[0]);
     angular.element().ready(function () {
         //angular.resumeBootstrap([app['name']]);

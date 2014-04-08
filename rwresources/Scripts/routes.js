@@ -1,6 +1,8 @@
-﻿define(['angular', 'ngRoute', 'app'], function (angular, route, app) {
+﻿define(['require', 'angular', 'ngRoute', 'app'], function (require, angular, route, app) {
     'use strict';
     
+    var u = requirejs.s.contexts._.config.baseUrl;
+
     return app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/view1', {
             templateUrl: '/Ebay/Partial/View1',

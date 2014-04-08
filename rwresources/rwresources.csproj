@@ -130,11 +130,14 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\bootstrap.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\rwresources %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\rwresources.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\controllers.js" />
+    <Content Include="Scripts\css.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -162,11 +165,11 @@
     <Content Include="Views\Home\Partials\Default.cshtml" />
     <Content Include="Views\Home\Partials\View1.cshtml" />
     <Content Include="Views\Home\Partials\View2.cshtml" />
-    <Content Include="Views\eBay\Index.cshtml" />
     <Content Include="Views\eBay\Partials\Body.cshtml" />
     <Content Include="Views\eBay\Partials\Default.cshtml" />
     <Content Include="Views\eBay\Partials\View1.cshtml" />
     <Content Include="Views\eBay\Partials\View2.cshtml" />
+    <Content Include="Views\eBay\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

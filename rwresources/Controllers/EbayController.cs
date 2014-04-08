@@ -26,15 +26,18 @@ namespace rwresources.Controllers
 
             ViewBag.ReqJsUri = reqJsUri;
 
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
             return PartialView();
         }
 
+        
         public ActionResult Partial(string name)
         {
             if (name == null)
             {
                 name = "Default";
             }
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
             return PartialView("Partials/" + name);
         }
 	}

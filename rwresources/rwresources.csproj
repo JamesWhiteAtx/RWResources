@@ -172,6 +172,7 @@
     <Content Include="Views\eBay\Partials\View1.cshtml" />
     <Content Include="Views\eBay\Partials\View2.cshtml" />
     <Content Include="Views\eBay\Index.cshtml" />
+    <Content Include="Views\eBay\Partials\CandList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

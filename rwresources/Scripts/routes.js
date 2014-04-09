@@ -26,6 +26,10 @@
             $sceDelegateProvider.resourceUrlWhitelist(['self', getHostUrl('**')]);
         }
 
+        $routeProvider.when('/CandList', {
+            templateUrl: getHostUrl('Ebay/Partial/CandList'),
+            controller: 'CandListCtrl'
+        });
         $routeProvider.when('/view1', {
             templateUrl: getHostUrl('Ebay/Partial/View1'),
             controller: 'MyCtrl1'

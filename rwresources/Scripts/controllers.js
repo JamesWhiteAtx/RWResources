@@ -2,6 +2,9 @@
     'use strict';
 
     app
+        .controller('EbayCtrl', ['$scope', function ($scope) {
+            $scope.var1 = "var one";
+        }])
         .controller('MyCtrl1', ['$scope', function ($scope) {
             $scope.var1 = "var one";
         }])

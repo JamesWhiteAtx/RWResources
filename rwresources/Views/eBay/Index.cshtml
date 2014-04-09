@@ -3,9 +3,7 @@
     ViewBag.Title = "eBay";
 }
 
-@Scripts.Render("~/bundles/jquery")
-
-<div id="spaBody">
+<div id="eBaySpaBody" ng-controller="EbayCtrl">
     <h1>ebay index</h1>
 
     <div class="btn-group">
@@ -18,11 +16,12 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupDrop1">
-                <li><a href="#">Dropdown link</a></li>
-                <li><a href="#">Dropdown link</a></li>
+                <li><a href ng-click="routev1()">View 1</a></li>
+                <li><a href ng-click="routev2()">View 2</a></li>
             </ul>
         </div>
     </div>
+
 
     <div ng-view></div>
 </div>

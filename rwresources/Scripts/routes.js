@@ -31,8 +31,8 @@
             controller: 'MyCtrl1'
         });
         $routeProvider.when('/view2', {
-            templateUrl: getHostUrl('/Ebay/Partial/View2'),
-            controller: 'MyCtrl2'
+            templateUrl: getHostUrl('Ebay/Partial/View2'),
+            controller: 'MyCtrl2' 
         });
         $routeProvider.otherwise({ redirectTo: '/view1' });
         

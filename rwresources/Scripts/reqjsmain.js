@@ -28,24 +28,32 @@ shims.ngResource = {
     exports: 'angular'
 };
 
+//paths.bootstrap = '/scripts/bootstrap';
+shims.bootstrap = { deps: ['jquery'] }; //, exports: '$.fn.dropdown' 
+
 require.config({
     paths: paths,
     shim: shims
 });
 
 require([
-    'css!bootstrap.css',
     'jquery',
 	'angular',
+    'domReady',
 	'app',
+    'css!bootstrap.css',
+    'css!ebay.css',
 	'routes',
-    'controllers'
-], function (bootstrap, $, angular, app, routes) {
+    'controllers',
+    'bootstrap'
+], function ($, angular, domReady, app) {
     'use strict';
 
-    //var $html = angular.element(document.getElementsByTagName('body')[0]);
-    angular.element().ready(function () {
-        //angular.resumeBootstrap([app['name']]);
-        angular.bootstrap(document, [app['name']]);
+    domReady(function () {
+        angular.bootstrap($('#eBaySpaBody'), [app.name]);
     });
+
+    //$(document).ready(function () {
+    //    angular.bootstrap($('#eBaySpaBody'), [app.name]);
+    //});
 });

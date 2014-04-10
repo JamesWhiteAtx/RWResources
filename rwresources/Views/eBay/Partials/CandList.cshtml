@@ -1,7 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "CandList";
-}
+﻿<h2>CandList</h2>
 
-<h2>CandList</h2>
+<table>
+    <tr ng-repeat="candidate in candidates">
+        <td>{{ candidate.id }}</td>
+        <td>{{ candidate.name }}</td>
+    </tr>
+</table>
 

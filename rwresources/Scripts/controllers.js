@@ -14,7 +14,18 @@
             };
         }])
         .controller('CandListCtrl', ['$scope', function ($scope) {
-            $scope.cands = [{ id: 1, name: 'one' }, { id: 2, name: 'two' }]
+
+            $scope.candidates = []
+
+            var search = nlapiCreateSearch('item',
+                [['custitem_ebay_candidate', 'is', 'T']],
+                [new nlobjSearchColumn('name').setSort()] );
+            var resultSet = search.runSearch();
+            var results = resultSet.getResults(0, 100);
+
+            angular.forEach(results, function (item, idx) {
+                $scope.candidates.push({ id: item.getId(), name: item.getValue('name') });
+            });
         }])
         .controller('MyCtrl1', ['$scope', function ($scope) {
             $scope.var1 = "var one";

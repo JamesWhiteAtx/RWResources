@@ -1,11 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "eBay";
-}
-
-<div id="eBaySpaBody" ng-controller="EbayCtrl">
-    <h1>ebay index</h1>
-
+﻿<div id="eBaySpaBody" ng-controller="EbayCtrl">
     <div class="btn-group">
         <button type="button" class="btn btn-default">1</button>
         <button type="button" class="btn btn-default">2</button>
@@ -29,11 +22,8 @@
         </div>
     </div>
 
-
     <div ng-view></div>
 </div>
-
-<h3>@ViewBag.ReqJsUri</h3>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.js"
         data-main="@ViewBag.ReqJsUri">

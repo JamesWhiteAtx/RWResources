@@ -28,6 +28,22 @@ shims.ngResource = {
     exports: 'angular'
 };
 
+/*var path = 'SuiteScripts/JPW/Lib/jPwJsUtils.js';
+var url = nlapiResolveURL('SUITELET', 'customscript_file_utils', 'customdeploy_file_utils');
+url = url + '&path=' + path;
+
+paths.jPwJsUtils = url;
+shims.jPwJsUtils = {
+    exports: 'jPw'
+};
+*/
+
+paths.jPwFiles = '/app/site/hosting/scriptlet.nl?script=48&deploy=1&type=file&path=SuiteScripts/JPW/jPwFiles.js';//'/core/media/media.nl?id=88581&c=801095&h=8d86fbe7ea57bbc5607e&_xt=.js';
+shims.jPwFiles = {
+    exports: 'jPw'
+};
+
+
 //paths.bootstrap = '/scripts/bootstrap';
 shims.bootstrap = { deps: ['jquery'] }; //, exports: '$.fn.dropdown' 
 
@@ -37,6 +53,7 @@ require.config({
 });
 
 require([
+    'jPwFiles',
     'jquery',
 	'angular',
     'domReady',
@@ -46,7 +63,7 @@ require([
 	'routes',
     'controllers',
     'bootstrap'
-], function ($, angular, domReady, app) {
+], function (jPwFiles, $, angular, domReady, app) {
     'use strict';
 
     domReady(function () {

@@ -1,15 +1,24 @@
-﻿var paths = {};
-var shims = {};
-
-var jQuery = window.jQuery;
+﻿var jQuery = window.jQuery;
 if (jQuery) {
     // register the current jQuery
     define('jquery', [], function () { return jQuery; });
 } else {
     // load if it's not available 
-    paths.jquery = '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min';
+    //paths.jquery = '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min';
+
+    require.config({
+        paths: { jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min' }
+    });
+
     //shims.jquery = { exports: 'jQuery' };
-}
+};
+
+require.config({
+    shim: {bootstrap: { deps: ['jquery'] } } //, exports: '$.fn.dropdown' 
+});
+
+var paths = {};
+var shims = {};
 
 paths.angular = '//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min';
 shims.angular = {
@@ -43,7 +52,6 @@ shims.jPwFiles = {
     exports: 'jPw'
 };
 
-
 //paths.bootstrap = '/scripts/bootstrap';
 shims.bootstrap = { deps: ['jquery'] }; //, exports: '$.fn.dropdown' 
 
@@ -52,25 +60,52 @@ require.config({
     shim: shims
 });
 
+
 require([
-    'jPwFiles',
-    'jquery',
-	'angular',
-    'domReady',
-	'app',
     'css!bootstrap.css',
     'css!ebay.css',
-	'routes',
-    'controllers',
-    'bootstrap'
-], function (jPwFiles, $, angular, domReady, app) {
+    'bootstrap',
+    'nsutils'
+], function (css1, css2, boot, nsutils) {
     'use strict';
 
-    domReady(function () {
-        angular.bootstrap($('#eBaySpaBody'), [app.name]);
+    if (nsutils.nsPresent) {
+        require.config({
+            paths: {
+                jPwJsUtils: nsutils.getFileUrl('SuiteScripts/JPW/Lib/jPwJsUtils.js'),
+                jPwNsScriptUtils: nsutils.getFileUrl('SuiteScripts/JPW/Lib/jPwNsScriptUtils.js'),
+                eBayTradingApi: nsutils.getFileUrl('SuiteScripts/JPW/eBayTradingApi.js')
+            },
+            shim: {
+                jPwJsUtils: { exports: 'jPw' },
+                jPwNsScriptUtils: { deps: ['jPwJsUtils'], exports: 'jPw' },
+                eBayTradingApi: { deps: ['jPwJsUtils', 'jPwNsScriptUtils'], exports: 'jPw.apiet' }
+            }
+        });
+
+        require(['eBayTradingApi'], function (apiet) {
+            var j = apiet;
+            var q = j;
+        });
+
+    };
+
+    require([
+        'jquery',
+        'angular',
+        'domReady',
+        'app',
+        'routes',
+        'controllers'
+    ], function ($, angular, domReady, app) {
+        'use strict';
+
+        domReady(function () {
+            var elm = $('#eBaySpaBody');
+            var nm = app.name;
+            angular.bootstrap(elm, [nm]);
+        });
     });
 
-    //$(document).ready(function () {
-    //    angular.bootstrap($('#eBaySpaBody'), [app.name]);
-    //});
 });
+

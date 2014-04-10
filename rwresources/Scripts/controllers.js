@@ -3,6 +3,7 @@
 
     app
         .controller('EbayCtrl', ['$scope', '$location', function ($scope, $location) {
+            $scope.notloaded = 'Loaded!';
             $scope.routeCandList = function (crumb) {
                 $location.path('/CandList');
             };
@@ -65,36 +66,36 @@
             //    }
             //});
 
-            $.ajax({
-                type: "POST",
-                url: 'http://open.api.ebay.com/shopping?callname=FindItemsAdvanced',
-                dataType: "jsonp",
-                jsonp: "callbackname",
-                crossDomain: true,
-                data: {
-                    'appid': 'Your AppID',
-                    'version': '771',
-                    'siteid': '0',
-                    'requestencoding': 'JSON',
-                    'responseencoding': 'JSON',
-                    'QueryKeywords': 'boot head',
-                    'MaxEntries': '3',
-                    'PriceMin': { 'Value': '250.0', 'CurrencyID': 'USD' },
-                    'PriceMax': { 'Value': '300.0', 'CurrencyID': 'USD' },
-                    'callback': true
-                },
-                success: function (object) {
-                    $("#ajaxLoad").html('');
-                    alert('success');
-                    $("#eBayXMLResponse").val(JSON.stringify(object, null, 4));
-                },
-                error: function (object, x, errorThrown) {
-                    $("#ajaxLoad").html('');
-                    alert("call failure");
-                    $("#eBayXMLResponse").val(JSON.stringify(errorThrown, null, 4));
+            //$.ajax({
+            //    type: "POST",
+            //    url: 'http://open.api.ebay.com/shopping?callname=FindItemsAdvanced',
+            //    dataType: "jsonp",
+            //    jsonp: "callbackname",
+            //    crossDomain: true,
+            //    data: {
+            //        'appid': 'Your AppID',
+            //        'version': '771',
+            //        'siteid': '0',
+            //        'requestencoding': 'JSON',
+            //        'responseencoding': 'JSON',
+            //        'QueryKeywords': 'boot head',
+            //        'MaxEntries': '3',
+            //        'PriceMin': { 'Value': '250.0', 'CurrencyID': 'USD' },
+            //        'PriceMax': { 'Value': '300.0', 'CurrencyID': 'USD' },
+            //        'callback': true
+            //    },
+            //    success: function (object) {
+            //        $("#ajaxLoad").html('');
+            //        alert('success');
+            //        $("#eBayXMLResponse").val(JSON.stringify(object, null, 4));
+            //    },
+            //    error: function (object, x, errorThrown) {
+            //        $("#ajaxLoad").html('');
+            //        alert("call failure");
+            //        $("#eBayXMLResponse").val(JSON.stringify(errorThrown, null, 4));
 
-                }
-            });
+            //    }
+            //});
 
         }])
         .controller('MyCtrl2', ['$scope', function ($scope) {

@@ -42,38 +42,58 @@
                 '</RequesterCredentials>' +
                 '</GeteBayOfficialTimeRequest>';
 
-            $.ajax({
-                url: 'https://api.ebay.com/ws/api.dll',
-                type: "POST",
-                processData: false,
-                headers: {
-                    'X-EBAY-API-SITEID': '100',
-                    'X-EBAY-API-COMPATIBILITY-LEVEL': '865',
-                    'X-EBAY-API-DEV-NAME': '481891e7-46d4-4a19-8992-bbfef42842b7',
-                    'X-EBAY-API-APP-NAME': 'Roadwire-36ca-46dd-ac36-2e3a7ba40080',
-                    'X-EBAY-API-CERT-NAME': 'a562fc05-3f60-4d85-a9ce-249b4ec4cbc1',
-                    'X-EBAY-API-CALL-NAME': 'GeteBayOfficialTime'
-                },
-                contentType: 'text/xml; charset=UTF-8',
-                data: xmlStr,
-                dataType: "xml",
-                success: function (response) {
-                    alert(response);
-                },
-                error: function (response) {
-                    alert(response);
-                }
-            });
+            //$.ajax({
+            //    url: 'https://api.ebay.com/ws/api.dll',
+            //    type: "POST",
+            //    processData: false,
+            //    headers: {
+            //        'X-EBAY-API-SITEID': '100',
+            //        'X-EBAY-API-COMPATIBILITY-LEVEL': '865',
+            //        'X-EBAY-API-DEV-NAME': '481891e7-46d4-4a19-8992-bbfef42842b7',
+            //        'X-EBAY-API-APP-NAME': 'Roadwire-36ca-46dd-ac36-2e3a7ba40080',
+            //        'X-EBAY-API-CERT-NAME': 'a562fc05-3f60-4d85-a9ce-249b4ec4cbc1',
+            //        'X-EBAY-API-CALL-NAME': 'GeteBayOfficialTime'
+            //    },
+            //    contentType: 'text/xml; charset=UTF-8',
+            //    data: xmlStr,
+            //    dataType: "xml",
+            //    success: function (response) {
+            //        alert(response);
+            //    },
+            //    error: function (response) {
+            //        alert(response);
+            //    }
+            //});
 
             $.ajax({
-                url: "http://fiddle.jshell.net/user/login",
                 type: "POST",
-                beforeSend: function(xhr){
-                    xhr.setRequestHeader('X-EBAY-API-SITEID', '100');
-                    xhr.setRequestHeader('X-EBAY-API-COMPATIBILITY-LEVEL', '865');
+                url: 'http://open.api.ebay.com/shopping?callname=FindItemsAdvanced',
+                dataType: "jsonp",
+                jsonp: "callbackname",
+                crossDomain: true,
+                data: {
+                    'appid': 'Your AppID',
+                    'version': '771',
+                    'siteid': '0',
+                    'requestencoding': 'JSON',
+                    'responseencoding': 'JSON',
+                    'QueryKeywords': 'boot head',
+                    'MaxEntries': '3',
+                    'PriceMin': { 'Value': '250.0', 'CurrencyID': 'USD' },
+                    'PriceMax': { 'Value': '300.0', 'CurrencyID': 'USD' },
+                    'callback': true
                 },
-                data: { username: "pippo", password: "secret123" },
-                dataType: "json"
+                success: function (object) {
+                    $("#ajaxLoad").html('');
+                    alert('success');
+                    $("#eBayXMLResponse").val(JSON.stringify(object, null, 4));
+                },
+                error: function (object, x, errorThrown) {
+                    $("#ajaxLoad").html('');
+                    alert("call failure");
+                    $("#eBayXMLResponse").val(JSON.stringify(errorThrown, null, 4));
+
+                }
             });
 
         }])
@@ -108,6 +128,7 @@
             };
 
             nlapiRequestURL(url, xmlStr, headers, handleResponse);
-
+            var context = nlapiGetContext();
+            $scope.usage = context.getRemainingUsage();
         }]);
 });

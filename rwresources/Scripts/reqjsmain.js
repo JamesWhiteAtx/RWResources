@@ -66,15 +66,15 @@ require([
     'css!ebay.css',
     'bootstrap',
     'nsutils'
-], function (css1, css2, boot, nsutils) {
+], function (css1, css2, boot, jpw) {
     'use strict';
 
-    if (nsutils.nsPresent) {
+    if (jpw.nsPresent) {
         require.config({
             paths: {
-                jPwJsUtils: nsutils.getFileUrl('SuiteScripts/JPW/Lib/jPwJsUtils.js'),
-                jPwNsScriptUtils: nsutils.getFileUrl('SuiteScripts/JPW/Lib/jPwNsScriptUtils.js'),
-                eBayTradingApi: nsutils.getFileUrl('SuiteScripts/JPW/eBayTradingApi.js')
+                jPwJsUtils: jpw.getFileUrl('SuiteScripts/JPW/Lib/jPwJsUtils.js'),
+                jPwNsScriptUtils: jpw.getFileUrl('SuiteScripts/JPW/Lib/jPwNsScriptUtils.js'),
+                eBayTradingApi: jpw.getFileUrl('SuiteScripts/JPW/eBayTradingApi.js')
             },
             shim: {
                 jPwJsUtils: { exports: 'jPw' },
@@ -82,12 +82,12 @@ require([
                 eBayTradingApi: { deps: ['jPwJsUtils', 'jPwNsScriptUtils'], exports: 'jPw.apiet' }
             }
         });
-
-        require(['eBayTradingApi'], function (apiet) {
-            var j = apiet;
-            var q = j;
+    } else {
+        define('jPwJsUtils', [], function () { return jpw; });
+        define('jPwNsScriptUtils', ['jPwJsUtils'], function () { return jpw; });
+        define('eBayTradingApi', ['jPwJsUtils', 'jPwNsScriptUtils'], function () {
+            return jpw;
         });
-
     };
 
     require([

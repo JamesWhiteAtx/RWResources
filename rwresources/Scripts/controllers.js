@@ -16,22 +16,27 @@
         }])
         .controller('CandListCtrl', ['$scope', function ($scope) {
 
-            $scope.candidates = []
-            var search = nlapiCreateSearch('item',
-                [['custitem_ebay_candidate', 'is', 'T']],
-                [new nlobjSearchColumn('name').setSort()] );
-            var resultSet = search.runSearch();
-            var results = resultSet.getResults(0, 100);
+            require(['eBayTradingApi'], function (jpw) {
+                var j = jpw;
+                $scope.candidates = []
+                /*var search = nlapiCreateSearch('item',
+                    [['custitem_ebay_candidate', 'is', 'T']],
+                    [new nlobjSearchColumn('name').setSort()]);
+                var resultSet = search.runSearch();
+                var results = resultSet.getResults(0, 100);
 
-            //angular.forEach(results, function (item, idx) {
-            //    $scope.candidates.push({ id: item.getId(), name: item.getValue('name') });
-            //});
-            $.each(results, function (idx, item) {
-                $scope.candidates.push({ id: item.getId(), name: item.getValue('name') });
+                //angular.forEach(results, function (item, idx) {
+                //    $scope.candidates.push({ id: item.getId(), name: item.getValue('name') });
+                //});
+                $.each(results, function (idx, item) {
+                    $scope.candidates.push({ id: item.getId(), name: item.getValue('name') });
+                });
+
+                var context = nlapiGetContext();
+                $scope.usage = context.getRemainingUsage();
+                */
             });
 
-            var context = nlapiGetContext();
-            $scope.usage = context.getRemainingUsage();
         }])
         .controller('MyCtrl1', ['$scope', function ($scope) {
             $scope.var1 = "var one";

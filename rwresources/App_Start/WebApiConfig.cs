@@ -15,6 +15,12 @@ namespace rwresources
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "EbayApi",
+                routeTemplate: "ebayapi/{call}/{site}",
+                defaults: new { controller = "EbayApi", site = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

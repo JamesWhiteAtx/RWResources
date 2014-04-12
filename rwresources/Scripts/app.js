@@ -1,3 +1,3 @@
-﻿define(['angular'], function (angular) {
-    return angular.module('ebay', ['ngRoute']);
+﻿define(['angular', 'ngRoute', 'services'], function (angular, ngRoute, services) {
+    return angular.module('ebay', ['ngRoute', 'ebay.services']);
 });

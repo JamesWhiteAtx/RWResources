@@ -71,12 +71,12 @@ namespace rwresources2.Controllers
                 "</GeteBayOfficialTimeRequest>";
 
             string resp = WebRequestPostData(url, xmlStr, headers);
-            return resp;
+            //return resp;
 
-            //XmlDocument doc = new XmlDocument();
-            //doc.LoadXml(resp);
-            //string json = Newtonsoft.Json.JsonConvert.SerializeXmlNode(doc);
-            //return json;
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(resp);
+            string json = Newtonsoft.Json.JsonConvert.SerializeXmlNode(doc);
+            return json;
             //return "value";
         }
 

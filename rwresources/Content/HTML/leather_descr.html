@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>leather-listing</title>
+
+<script type="text/javascript">
+	function MM_preloadImages() { //v3.0
+	var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+	var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+	if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+	}
+</script>
+
+<script type="text/javascript" language="javascript">
+    document.write("<script language='javascript' type='text/javascript' s"
+    + "rc='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'><\/sc"
+    + "ript>");
+</script>
+<!--%jpw:fitmentcars%-->
+<script>
+    $(function () {
+        function showfit() {
+            $('#fitment').show();
+            $('p.fitment').html("<strong>This seat cover is compatible with " + fitmentcars.length + " vehicle(s).</strong>");
+            var tbody = $('table.fitment tbody')
+            tbody.empty();
+            var hasConfig = false;
+            $.each(fitmentcars, function (idx, elem) {
+                var tr = $('<tr>');
+                tbody.append( tr.append($('<td>').addClass('selcells').html(elem.make)).append($('<td>').addClass('selcells').html(elem.year)).append($('<td>').addClass('selcells').html(elem.model))
+						.append($('<td>').addClass('selcells').html(elem.body)).append($('<td>').addClass('selcells').html(elem.trim)));
+                if (elem.config) {tr.append($('<td>').addClass('selcells').html(elem.config)); hasConfig = true; };
+            });
+            if (!hasConfig) { $('#ftmtcfg').hide(); };
+        };
+        function hidefit() { $('#fitment').hide(); };
+        if (("fitmentcars" in window) && (fitmentcars.length > 0)) { showfit(); } else { hidefit(); };
+    });
+
+</script>
+
+<style type="text/css">
+
+.bullets {
+	font-family: Helvetica, arial, sans-serif;
+	font-size: 13px;
+	line-height: 24px;
+	color: #666;
+	text-indent: 0px;
+	padding-left: 20px;
+	list-style-type: none;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+.process_text_boxes {
+	font-family: Helvetica, arial, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+	text-indent: 0px;
+	padding-left: 20px;
+	list-style-type: none;
+	padding-top: 0px;
+	background-color: #FFF;
+}
+
+.tabelhead {
+	color: #FFF;
+	background-color: #999;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.tabelhead2 {
+	color: #FFF;
+	background-color: #999;
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	padding-left: 20px;
+}
+
+.sellhead {
+  color: #FFF;
+  background-color: #999;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.selcells {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+}
+
+.disclaimer {
+	color: #FFF;
+	background-color: #333;
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding-left: 70px;
+}
+
+.tablecells {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+	text-align: center;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+
+.headers {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	background-color: #484848;
+	color: #FFF;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 20px;
+}
+
+.order-process-hd {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	background-color: #FFFFFF;
+	color: #666;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 0px;
+}
+
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666;
+	padding-top: 15px;
+	padding-left: 15px;
+	line-height: 145%;
+}
+
+.hiddenTarget {
+	display:none;
+	position:fixed;
+}
+
+.tabbedPages {
+	position:relative;
+	margin:50px 0;
+}
+
+ul.tabs {
+	padding:0;
+	margin:0;
+	list-style:none;
+	float:left;
+	position:relative;
+	z-index:100;
+}
+
+ul.tabs li {
+	float:left;
+	margin-right:2px;
+}
+
+ul.tabs li a {
+	display:block;
+	font:normal 12px/30px arial, sans-serif;
+	border:1px solid #aaa;
+	border-radius:5px 5px 0 0;
+	background:#69c;
+	padding:0 20px;
+	text-decoration:none;
+	color:#fff;
+	background-color: #484848;
+}
+
+.tabcontent {
+	float: left;
+	width: 950px;
+	padding: 20px;
+	border: 1px solid #aaa;
+	border-radius: 0 5px 5px 5px;
+	background: #fff;
+	position: relative;
+	z-index: 10;
+	display: none;
+	clear: left;
+	top: -1px;
+	box-shadow: 0 15px 10px -15px rgba(0,0,0,0.4);
+}
+
+.tabcontent p {
+	padding:0 0 5px 0;
+	margin:0;
+	font:normal 12px/20px arial, sans-serif;
+	color:#333;
+}
+
+.tabcontent h5 {
+	padding:0 0 10px 0;
+	margin:0;
+	font:bold 14px/25px arial, sans-serif;
+	color:#000;
+}
+
+.tabcontent img {
+	border:1px solid #444;
+	display:block;
+	float:left;
+	margin:0 20px 0 0;
+	box-shadow:0 15px 10px -15px rgba(0,0,0,0.4);
+}
+
+/* change the tab to selected style */
+
+ul.tabs li a.default,
+
+#tab1:target ~ .tabbedPages .tabs li a.default,
+#tab2:target ~ .tabbedPages .tabs li a.tab2,
+#tab3:target ~ .tabbedPages .tabs li a.tab3,
+#tab4:target ~ .tabbedPages .tabs li a.tab4,
+#tab5:target ~ .tabbedPages .tabs li a.tab5 {background-color:#fff; border-bottom:1px solid #fff; color:#000;} 
+
+/* show the tab content */
+
+div.default,
+
+#tab1:target ~ .tabbedPages div.default,
+#tab2:target ~ .tabbedPages div#view2,
+#tab3:target ~ .tabbedPages div#view3,
+#tab4:target ~ .tabbedPages div#view4,
+#tab5:target ~ .tabbedPages div#view5 {display:block;}
+
+/* reset the unclicked tabs to default */
+
+#tab2:target ~ .tabbedPages .tabs li a.default,
+#tab3:target ~ .tabbedPages .tabs li a.default,
+#tab4:target ~ .tabbedPages .tabs li a.default,
+#tab5:target ~ .tabbedPages .tabs li a.default {background-color:#484848; border:1px solid #888; color:#fff;}
+
+/* hide the default tab when selecting other tabs*/
+
+#tab2:target ~ .tabbedPages div.default,
+#tab3:target ~ .tabbedPages div.default,
+#tab4:target ~ .tabbedPages div.default,
+#tab5:target ~ .tabbedPages div.default {display:none;}
+
+.clear {clear:left;}
+
+.greybg_bullets {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	background-color: #5a5755;
+	color: #CCC;
+	padding-top: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	padding-left: 70px;
+	line-height: 35px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+.why_hd {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #FFF;
+	background-color: #666;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+}
+</style>
+
+</head>
+
+<body onload="MM_preloadImages('../../../../images/how-to-order-step1-rollover.png','../../../../images/how-to-order-step2-rollover.png','../../../../images/how-to-order-step3-rollover.png')">
+
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+
+    <!-- Roadwire fitment -->
+    <tr><td width="1021">
+	    <div id="fitment">
+		    <p class="fitment"><strong>compatible</strong></p>
+	
+		    <table class="fitment" width="100%" border="1" cellspacing="0" cellpadding="0">
+		    <thead>
+			    <tr>
+			    <th class="sellhead">Make</th>
+			    <th class="sellhead">Year</th>
+			    <th class="sellhead">Model</th>
+			    <th class="sellhead">Body</th>
+			    <th class="sellhead">Trim</th>
+			    <th id=ftmtcfg class="sellhead">Seat Configuration</th>
+			    </tr>
+		    </thead>
+		    <tbody>
+		    </tbody>
+		    </table>
+	    </div>
+    </td></tr>
+    <!-- Roadwire fitment -->
+
+	<tr>
+		<td width="1021"><img src="http://leatherseatlibrary.com/ebay/listing-header.png" alt="roadwire" width="1000" height="121" border="0" /></td>
+	</tr>
+	<tr>
+		<td><img src="http://leatherseatlibrary.com/ebay/listing_leather_header.png" alt="roadwire" width="1000" height="81" /></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="1000" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><img src="http://leatherseatlibrary.com/ebay/listing_leather_image.png" alt="roadwire" width="687" height="398" /></td>
+					<td><a href="http://stores.ebay.com/roadwire" target="_self"><img src="http://leatherseatlibrary.com/ebay/listing_seat_heater.png" alt="roadwire" width="313" height="398" /></a></td>
+				</tr>
+				<tr>
+					<td colspan="2" valign="top" class="greybg_bullets">• Replaces existing upholstery with top grain, fine automotive leather <br />
+						• Meets or exceeds OEM quality and safety standards<br />
+						• Backed by an industry leading 3 year/36,000 mile warranty<br />
+						• Shipping and professional installation are included in the price<br />
+						• Professional installation guarantees perfect fit and longevity <br />
+						• Carefully selected colors for the best possible OEM match <br />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" valign="top" class="disclaimer"><br />
+						* Please note: Your existing car upholstery will not be usable after it is removed from your vehicle and replaced with a Roadwire Leather interior<br /><br /></td>
+				</tr>
+				<tr>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" class="order-process-hd"><hr />ORDERING PROCESS<hr /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><img src="http://leatherseatlibrary.com/ebay/listing-process.png" alt="roadwire" width="1000" height="228" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><br />
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="466" rowspan="2" valign="top"><img src="http://leatherseatlibrary.com/ebay/process_01.png" width="466" height="125" /></td>
+								<td class="bullets"><img src="http://leatherseatlibrary.com/ebay/listing_ebay_logo.png" width="153" height="26" /></td>
+							</tr>
+							<tr>
+								<td class="process_text_boxes">For leather interior upgrades our Vehicle Selector will help you find the correct kit designed to fit your vehicle’s specific interior. You can find this feature in the far left column of Roadwire’s eBay Store. Once you have selected the product you want, simply add it to your cart and pay securely through PayPal. You order confirmation will arrive by email within minutes of your purchase.</td>
+							</tr>
+							<tr>
+								<td colspan="2" valign="top"><br /><hr><br /></td>
+							</tr>
+							<tr>
+								<td width="466" rowspan="2" valign="top"><img src="http://leatherseatlibrary.com/ebay/process_02.png" width="466" height="125" /></td>
+								<td class="bullets"><img src="http://leatherseatlibrary.com/ebay/listing_rw_logo.png" width="153" height="26" /></td>
+							</tr>
+							<tr>
+								<td class="process_text_boxes"><p>Once your order has been placed it will be processed and shipped via UPS directly to your shipping address. Your Roadwire package will include your leather kit and InstallCard. </p></td>
+							</tr>
+							<tr>
+								<td colspan="2" valign="top"><br /><hr><br /></td>
+							</tr>
+							<tr>
+								<td width="466" rowspan="2" valign="top"><img src="http://leatherseatlibrary.com/ebay/process_03.png" width="466" height="125" /></td>
+								<td class="bullets"><img src="http://leatherseatlibrary.com/ebay/listing_installer_logo.png" width="153" height="32" /></td>
+							</tr>
+							<tr>
+								<td class="process_text_boxes">When your package arrives please be sure to retrieve your InstallCard located inside the UPS packing slip. Follow the instructions on the InstallCard to schedule your installation at your convenience. InstallerNet finds installers close to you, schedules the installation and provides customer assistance if needed. </td>
+							</tr>
+							<tr>
+								<td colspan="2" valign="top"><br /><hr><br /></td>
+							</tr>
+							<tr>
+								<td width="466" rowspan="2" valign="top"><img src="http://leatherseatlibrary.com/ebay/process_04.png" width="466" height="125" /></td>
+								<td class="bullets">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="process_text_boxes">Bring your vehicle to your installation appointment. Be sure to bring  your Roadwire product and InstallCard with you. Your newly upgraded vehicle will be ready within a few hours. Leave happy knowing your product is covered by Roadwire’s industry leading 3 year/36,000 mile warranty and customer service.</td>
+							</tr>
+						</table><br /><br />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="left" class="why_hd">Why full Leather upholstery replacement vs cheap slip-on Seat Covers</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="bullets"><p><strong>Look and feel: </strong><br />
+						Cheaper Slip-on Seat Covers are not designed to fit your exact vehicle the way Roadwire Leather Kits are. The quality of the Leather and vinyl is usually lower as well. Unlike Roadwire&rsquo;s leather kits, which mimic OEM interiors to perfection, Slip-on Seat Covers are placed on top of the seats and will never look as an OEM leather interior.</p>
+						<p><strong>Safety:</strong><br />
+						Most slip-on Seat Covers out there are not tested for industry safety standards. Meaning they don&rsquo;t take in consideration deploying airbags, and can move around during hardcore maneuvers, causing you to lose control of your vehicle. Roadwire Leather Kits are designed and tested for Airbag deployment and meet safety standards. Also because we actually replace your upholstery with our Leather Kits, you don&rsquo;t have to worry about the seating surface moving around.</p>
+						<p><strong>Added Vehicle Value: </strong><br>
+						Cheaper readily available Seat Covers are well…just seat covers and do not add value to your vehicle. However, Roadwire Leather kits do in fact upgrade your vehicle upholstery. Leather interior ranks in the top 3 most desirable luxury features that people look when buying a vehicle.  </p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="why_hd">why Roadwire Leather Interiors vs cheaper competition?</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="bullets"><p>Roadwire is the only company in the market that offers a 3 year/36,000 mile warranty. If you think about it, that&rsquo;s more than most vehicle manufacturers offer for their own vehicle interiors.</p>
+						<p>Just like Roadwire pioneered the world of aftermarket leather upholstery decades ago, we are now pioneering the product + installation market. Our competitors out there don&rsquo;t have an extensive national network coverage of certified installers like us, therefore they could never guarantee the perfect OEM fit that we do. </p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="why_hd">Why Professional Installation?</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="bullets"><p>Replacing your upholstery is not an easy task. Unfortunately, not even vehicle experts could do the job right. It takes years of experience installing leather interiors to develop the expert skills needed to results in that OEM look and feel we all want. We could fill pages with pictures of cases where people have tried to have their leather interiors installed by local shops (or even themselves) which turned out horribly bad. In fact, most of our installation centers end up fixing those messes themselves on a daily basis.</p>
+						<p>Look around on the web, Roadwire is the only company offering installation with their leather kits. Why? Because we know how important is the installation portion for leather upholstery, and we are the only ones that have decades of experience in the business and the network of certified installation centers to be able to bring this offer directly to the consumer.</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="why_hd">Why Roadwire?</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="bullets"><p>Roadwire is the original manufacturers of aftermarket leather upholstery with decades of experience as the industries leading provider for OEM quality leather interiors. We&rsquo;re also the first company to receive approval to install leather interiors in new vehicles for car manufacturers. In fact, if you look around at any car dealership close to you, chances are, you will find one of our leather interiors in their showroom</p>
+						<p>If car manufacturers like Mitsubishi, aftermarket name brands like Shelby and new car dealerships all over the country trust us with upgrading their new vehicles with leather interiors, then why would you trust anyone else? When it comes to upgrading your upholstery to Leather, Roadwire just makes sense.</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b id="tab1" class="hiddenTarget"></b>
+			<b id="tab2" class="hiddenTarget"></b>
+			<b id="tab3" class="hiddenTarget"></b>
+			<b id="tab4" class="hiddenTarget"></b>
+			<b id="tab5" class="hiddenTarget"></b>
+
+			<div class="tabbedPages">
+				<ul class="tabs">
+					<li><a href="#tab1" class="default tab1 tabpages">CONTACT US</a></li>
+					<li><a href="#tab2" class="tab2 tabpages">PAYMENTS</a></li>
+					<li><a href="#tab3" class="tab3 tabpages">SHIPPING</a></li>
+					<li><a href="#tab4" class="tab4 tabpages">POLICIES</a></li>
+					<li><a href="#tab5" class="tab5 tabpages">INSTALLATION</a></li>
+				</ul>
+				<div id="view1" class="tabcontent default">
+					<p>A friendly and knowledgeable staff is the cornerstone of our success. We&rsquo;re committed to making sure that every question regarding your purchase or our products receives an accurate answer as soon as possible. The best way to reach us at anytime is through eBay&rsquo;s messaging system at any time. Click here to send us a message: </p>
+					<p><strong><br /><a href="http://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&_trksid=p2050430.m2531.l4583&rt=nc&&requested=roadwire&guest=1">Contact Us</a></strong></p>
+					<p>If you prefer, we can also be reached Monday - Friday from 9am-5pm CST by calling 877-701-5783. </p>
+					<p class="text">&nbsp;</p>
+				</div>
+
+				<div id="view2" class="tabcontent">
+					<p>All payments must be made via PayPal. <br /><br />PayPal allows you to pay using any major credit card or by having funds directly transferred from your bank account. <br />If you do not currently have an account with them, you may register for one at <strong><u><a href="https://www.paypal.com">PayPal </a></u>.</strong></p>
+					<p>* Immediate payment is required upon selecting &quot;Buy It Now&quot;. <br /><br /><br /></p>
+				</div>
+
+				<div id="view3" class="tabcontent">
+					<p>All orders typically ship within 2 business days from the order confirmation. We only ship within the Continental U.S. and do not offer shipping to P.O. Boxes, APO or FPO addresses. International shipping is not available at this time. </p>
+					<p>Please note that in transit times are only estimates, and might be affected by factors outside of our control. The options and prices listed above are offered exclusively to our eBay customers. </p>
+					<table width="50%" border="1" cellspacing="0" cellpadding="0">
+						<tr>
+						  <td class="tabelhead">S<strong>ervice</strong></td>
+						  <td class="tabelhead"><strong>  Est. Transit Time </strong></td>
+						  <td class="tabelhead"><strong>  Charge</strong></td>
+						</tr>
+						<tr>
+						  <td class="tablecells"> UPS Ground  </td>
+						  <td class="tablecells">  5-7 business days</td>
+						  <td class="tablecells"> Free</td>
+						</tr>
+						<tr>
+						  <td class="tablecells"> UPS 2 Day  </td>
+						  <td class="tablecells">2 business days </td>
+						  <td class="tablecells">  $50</td>
+						</tr>
+						<tr>
+						  <td class="tablecells"> UPS Overnight </td>
+						  <td class="tablecells">1 business day </td>
+						  <td class="tablecells"> $75</td>
+						</tr>
+					</table>
+					<p>&nbsp;</p>
+					<p class="text">&nbsp;</p>
+				</div>
+
+				<div id="view4" class="tabcontent">
+					<p><strong>Cancellation Policy</strong></p>
+					<p>To request an order cancelation, contact our customer service department using the Contact us link below or call our toll free phone number as soon as possible. If your order has not been processed, we will do our best to cancel it. However, if you order has been processed and a conﬁrmation email has been sent, we may not be able to process your cancellation request. <br />
+						<br /> Please understand due to the nature of our business, once an order is placed there are immediate, relative costs associated with preparing the order. Therefore, we must include our standard 15% restocking fee after this point. </p>
+					<p>For cancellations or changes prior to the processing of your order please click <a href="http://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&amp;_trksid=p2050430.m2531.l4583&amp;rt=nc&amp;&amp;requested=roadwire&amp;guest=1">Contact us</a> or call 877-701-5783.<br /></p>
+					<p>&nbsp;</p>
+					<p><strong><a href="http://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&amp;_trksid=p2050430.m2531.l4583&amp;rt=nc&amp;&amp;requested=roadwire&amp;guest=1">Contact us</a></strong></p>
+					<p>Please understand due to the nature of our business, once an order is placed there are immediate, relative costs associated with preparing the order. Therefore, we must include our standard 15% restocking fee after this point. </p>
+					<p>For cancellations or changes prior to the processing of your order please call 877-701-5783.</p>
+					<p>&nbsp;</p>
+					<p><strong>Return and Exchanges Policy</strong></p>
+					<p>We offer a simple solution for returns to our eBay customers. Customers may return our product within 30 days of shipping. For the product to qualify for a refund, it must be sent back in the packaging and without signs of use or attempt of installation. </p>
+					<p>There is a 15% restocking fee on all returned products.<br /><br />To start the process of return or exchange, please contact us by clicking <a href="http://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&amp;_trksid=p2050430.m2531.l4583&amp;rt=nc&amp;&amp;requested=roadwire&amp;guest=1">here</a>.</p>
+					<p><strong><br />Pricing</strong></p>
+					<p>eBay customers have the opportunity to buy our products at a price offered exclusively on purchases made through eBay. Our leather and seat heater kits are priced to deliver the convenience of professional installation while providing substantial savings to the customer. </p>
+					<p>&nbsp;</p>
+					<p><strong>Tax Policy</strong></p>
+					<p>We are required to collect all applicable sales tax when an order is shipped to a state where Roadwire has a significant economic presence. We currently have presence in the following states: California, Colorado, Florida, Georgia, Illinois, Indiana, Michigan, Minnesota, Mississippi, Nevada, North Carolina, Ohio, Pennsylvania, Texas, Washington, Wisconsin. </p>
+					<p>Unfortunately, we cannot accommodate any type of tax-exempt orders placed through eBay. For more information regarding tax-free exemptions we urge you to check your state &amp; local sales tax authority for complete tax exempt purchasing rules. </p>
+				</div>
+
+				<div id="view5" class="tabcontent">
+					<p><strong>Purchase, receive and schedule installation. It’s that simple.</strong></p>
+					<p>Roadwire is the first and only company in the nation to offer OEM quality products, including installation, at a factory direct price! As the industry’s leading provider for interior upgrades, we’re revolutionizing the automotive aftermarket industry through our partnership with the nation’s largest team of installation centers, InstallerNet. This alliance has enabled us to form the most advanced network of professional restylers in automotive history.</p>
+					<p>&nbsp;</p>
+					<p>Together, we’ve developed a system to simplify vehicle upgrades from start to finish. From choosing the right product specifically tailored to your vehicle, to having it installed, Roadwire has you covered with a 3 easy step process.</p>
+				</div>
+				
+			</div>
+			<br class="clear"> <br /><br /><br />&nbsp;
+		</td>
+  </tr>
+  <tr>
+    <td><br /><img src="http://leatherseatlibrary.com/ebay/listing_18.png" alt="roadwire" width="1000" height="178" /></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

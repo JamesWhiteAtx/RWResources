@@ -1,34 +1,5 @@
-﻿<div id="cand-list-body" class="fill-body well">
-    <table id="cand-list-tbl" class="table table-hover">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td colspan="2">Larry the Bird</td>
-                <td>twitter</td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-condensed table-hover">
+﻿<div id="cand-list-body" class="fill-body well @ViewBag.BodyClass">
+    <table class="table table-condensed table-bordered table-hover">
         <tbody>
             <tr>
                 <td>a</td>
@@ -70,14 +41,11 @@
     </table>
 </div>
 <div id="bot-bar" class="bot-bar well">
+
     <ul class="pagination pagination-sm pull-right">
-        <li><a href="#">«</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">»</a></li>
+        <li ng-repeat="candidate in candList.pages" title="{{'from: ' + candidate.from + ' to: ' + candidate.to}}">
+            <a href="#">{{$index}}</a>
+        </li>
     </ul>
 </div>
 

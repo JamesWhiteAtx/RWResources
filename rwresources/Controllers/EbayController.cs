@@ -22,6 +22,11 @@ namespace rwresources.Controllers
             {
                 Uri u = new Uri(new Uri(Request.Url.GetLeftPart(UriPartial.Authority)),reqJsUri);
                 reqJsUri = u.AbsoluteUri;
+                ViewBag.BodyClass = "fill-body-host";
+            }
+            else
+            {
+                ViewBag.BodyClass = "fill-body-free";
             }
 
             ViewBag.ReqJsUri = reqJsUri;
@@ -37,6 +42,17 @@ namespace rwresources.Controllers
             {
                 name = "Default";
             }
+
+            CompilationSection section = ConfigurationManager.GetSection("system.web/compilation") as CompilationSection;
+            if (!section.Debug)
+            {
+                ViewBag.BodyClass = "fill-body-host";
+            }
+            else
+            {
+                ViewBag.BodyClass = "fill-body-free";
+            }
+            
             Response.AppendHeader("Access-Control-Allow-Origin", "*");
             return PartialView("Partials/" + name);
         }

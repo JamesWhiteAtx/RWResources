@@ -3,6 +3,19 @@
 
     var srvc = angular.module('ebay.services', ['ngResource']);
 
+    srvc.factory('NsCandList', [function () {
+        var candList;
+        if (jpw.nsPresent) {
+        } else {
+            candList = {
+                total: 3,
+                pages: [{from:1, to:50}, {from:51, to:100}, {from:101, to:150}]
+            };
+
+        };
+        return candList;
+    }]);
+
     srvc.factory('CallEbayApi', ['$resource', '$q', '$http', function ($resource, $q, $http) {
         return function (call, xml) {
             var delay = $q.defer();

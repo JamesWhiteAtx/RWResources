@@ -14,10 +14,11 @@
                 $location.path('/view2');
             };
         }])
-        .controller('CandListCtrl', ['$scope', 'PromiseApi', function ($scope, PromiseApi) {
+        .controller('CandListCtrl', ['$scope', 'NsCandList', 'PromiseApi', function ($scope, NsCandList, PromiseApi) {
             var entries = 50,
                 api, xmlStr;
 
+            $scope.candList = NsCandList;
             $scope.candidates = []
 
             /*

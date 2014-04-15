@@ -1,10 +1,99 @@
-﻿<h2>CandList</h2>
-<p>usage: {{usage}}</p>
-<table>
-    <tr ng-repeat="candidate in candidates">
-        <td>{{ candidate.id }}</td>
-        <td>{{ candidate.name }}</td>
-    </tr>
-</table>
+﻿<div id="cand-list-body" class="fill-body well">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>mdo</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>fat</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>twitter</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-condensed table-hover">
+        <tbody>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-repeat="candidate in candidates">
+                <td>{{ candidate.id }}</td>
+                <td>{{ candidate.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="bot-bar" class="bot-bar well">
+    <ul class="pagination pagination-sm pull-right">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">»</a></li>
+    </ul>
+</div>
 
+    <p>usage: {{usage}}</p>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(window).bind('scroll', function () {
+                var s = $(window).scrollTop();
+                var p = 120 - s;
+                var t = 0;
+                if (p > 0) {
+                    t = p;
+                }
+                $('.fill-body').css('top', t + 'px');
+            });
+        });
+    </script>
 

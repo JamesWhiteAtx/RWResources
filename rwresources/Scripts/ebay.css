@@ -7,3 +7,29 @@
     list-style-position: outside; 
     list-style-type: none; 
 }
+
+.fill-body
+{
+    position:fixed;
+    top:50px;
+    bottom:50px;
+    overflow: scroll;
+}
+.bot-bar
+{
+    position:fixed;
+    left: 50px;
+    height: 45px;
+    bottom: 1px;
+    right: 400px;
+}
+#cand-list-body 
+{
+    left:50px;
+    right: 400px;
+}
+#node-details 
+{
+    right: 50px;
+    width:300px;
+}

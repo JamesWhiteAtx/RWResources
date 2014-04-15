@@ -20,6 +20,7 @@
 
             $scope.candidates = []
 
+            /*
             var search = nlapiCreateSearch('item',
                 [['custitem_ebay_candidate', 'is', 'T']],
                 [new nlobjSearchColumn('name').setSort()]);
@@ -32,9 +33,9 @@
             //$.each(results, function (idx, item) {
             //    $scope.candidates.push({ id: item.getId(), name: item.getValue('name') });
             //});
-
-            var context = nlapiGetContext();
-            $scope.usage = context.getRemainingUsage();
+            */
+            //var context = nlapiGetContext();
+            //$scope.usage = context.getRemainingUsage();
             
             /*
             if (apiet.makeActiveListingsReques) {

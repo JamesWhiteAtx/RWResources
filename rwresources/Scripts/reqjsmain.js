@@ -45,22 +45,31 @@ paths.jPwJsUtils = url;
 shims.jPwJsUtils = {
     exports: 'jPw'
 };
-*/
-
 paths.jPwFiles = '/app/site/hosting/scriptlet.nl?script=48&deploy=1&type=file&path=SuiteScripts/JPW/jPwFiles.js';//'/core/media/media.nl?id=88581&c=801095&h=8d86fbe7ea57bbc5607e&_xt=.js';
 shims.jPwFiles = {
     exports: 'jPw'
 };
+*/
 
 //paths.bootstrap = '/scripts/bootstrap';
 shims.bootstrap = { deps: ['jquery'] }; //, exports: '$.fn.dropdown' 
 
+var baseUrl = 'resource/scripts';
+paths.style = '../style';
+
 require.config({
+    baseUrl: baseUrl,
     paths: paths,
     shim: shims
 });
 
+require([
+    'css!style/ebay.css',
+    'nsutils'
+], function (css1, css2, boot, jpw) {
+});
 
+/*
 require([
     'css!bootstrap.css',
     'css!ebay.css',
@@ -108,4 +117,4 @@ require([
     });
 
 });
-
+*/

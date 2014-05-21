@@ -143,6 +143,9 @@
     <Content Include="Content\HTML\Listing_Leather_finalcopy.html" />
     <Content Include="Content\loading-large.gif" />
     <Content Include="Content\loading.gif" />
+    <Content Include="resource\scripts\css.js" />
+    <Content Include="resource\scripts\nsutils.js" />
+    <Content Include="resource\style\ebay.css" />
     <Content Include="Scripts\ebay.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

@@ -1,0 +1,48 @@
+﻿ul.dropdown-menu {
+    display: none; 
+    margin-left: 0; 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    list-style-image: none; 
+    list-style-position: outside; 
+    list-style-type: none; 
+}
+
+.fill-body
+{
+    position:fixed;
+    bottom:35px;
+    overflow: scroll;
+}
+.fill-body-host {
+    top: 185px;
+}
+.fill-body-free {
+    top: 50px;
+}
+.bot-bar
+{
+    position:fixed;
+    left: 10px;
+    height: 45px;
+    bottom: 1px;
+    right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 2px;
+}
+#cand-list-body 
+{
+    left: 10px;
+    right: 10px;
+    font-size: 12px;
+}
+#cand-list-tbl {
+    min-width: 90px;
+}
+
+#node-details 
+{
+    right: 50px;
+    width:300px;
+}

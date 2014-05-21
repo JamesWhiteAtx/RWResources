@@ -16,12 +16,12 @@ namespace rwresources.Controllers
         {
             CompilationSection section = ConfigurationManager.GetSection("system.web/compilation") as CompilationSection;
 
-            string reqJsUri = "/scripts/reqjsmain.js";
+            string reqJsMainUri = "/scripts/reqjsmain.js";
 
             if (!section.Debug)
             {
-                Uri u = new Uri(new Uri(Request.Url.GetLeftPart(UriPartial.Authority)),reqJsUri);
-                reqJsUri = u.AbsoluteUri;
+                Uri u = new Uri(new Uri(Request.Url.GetLeftPart(UriPartial.Authority)),reqJsMainUri);
+                reqJsMainUri = u.AbsoluteUri;
                 ViewBag.BodyClass = "fill-body-host";
             }
             else
@@ -29,7 +29,7 @@ namespace rwresources.Controllers
                 ViewBag.BodyClass = "fill-body-free";
             }
 
-            ViewBag.ReqJsUri = reqJsUri;
+            ViewBag.reqJsMainUri = reqJsMainUri;
 
             Response.AppendHeader("Access-Control-Allow-Origin", "*");
             return PartialView();
